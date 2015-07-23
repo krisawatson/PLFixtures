@@ -1,9 +1,7 @@
-
-*.class
-
 /target/
+/bin/
 /org/
-.DS_Store
 .classpath
 .project
-.settings
+.settings/
+.DS_Store
