@@ -1,4 +1,9 @@
 
 *.class
 
-target/*
+/target/
+/org/
+.DS_Store
+.classpath
+.project
+.settings
