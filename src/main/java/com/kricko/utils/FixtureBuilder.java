@@ -2,6 +2,7 @@ package com.kricko.utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -43,12 +44,16 @@ public class FixtureBuilder {
 				
 				gw = gw - 31;
 				
-//				System.out.println("GW: " + gw + " MD: " + md + " Fixture: " + match.getHomeTeamName() + " vs " + match.getAwayTeamName());
+				// Sort fixtures by timestamp
+				fixtures.stream()
+				  .sorted(Comparator.comparing(Fixture::getTimestamp));
+				
 				fixtures.add(
 					fixture.setGameWeek(gw)
 						.setMatchDay(md)
 						.setHomeTeam(match.getHomeTeamName())
-						.setAwayTeam(match.getAwayTeamName()));
+						.setAwayTeam(match.getAwayTeamName())
+						.setTimestamp(match.getTimestamp()));
 			}
 		}
 		

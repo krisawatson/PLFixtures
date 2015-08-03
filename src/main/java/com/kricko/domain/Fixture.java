@@ -9,6 +9,8 @@ public class Fixture {
 	private String homeTeam;
 	
 	private String awayTeam;
+	
+	private long timestamp;
 
 	public int getGameWeek() {
 		return gameWeek;
@@ -43,6 +45,15 @@ public class Fixture {
 
 	public Fixture setAwayTeam(String awayTeam) {
 		this.awayTeam = awayTeam;
+		return this;
+	}
+
+	public long getTimestamp() {
+		return timestamp;
+	}
+
+	public Fixture setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
 		return this;
 	}
 }
